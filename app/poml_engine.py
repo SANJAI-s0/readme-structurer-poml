@@ -1,6 +1,18 @@
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
-def load_poml(path):
+
+def load_poml(path: str):
+    """
+    Load POML rules safely using a project-root-relative path.
+    """
+    path = Path(path)
+
+    # Resolve relative to project root
+    if not path.is_absolute():
+        project_root = Path(__file__).resolve().parent.parent
+        path = project_root / path
+
     tree = ET.parse(path)
     root = tree.getroot()
 
@@ -13,6 +25,8 @@ def load_poml(path):
         alias_map[name.lower()] = name
 
         for alias in sec.findall("alias"):
-            alias_map[alias.text.strip().lower()] = name
+            alias_map[
+                alias.text.strip().lower()
+            ] = name
 
     return ordered_sections, alias_map
