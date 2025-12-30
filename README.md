@@ -1,7 +1,7 @@
 # 📘 POML README Structurer
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
-![CI](https://github.com/SANJAI-s0/readme-structurer-poml/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/SANJAI-s0/readme-structurer-poml/actions/workflows/ci.yml/badge.svg?branch=main)
 ![Built with POML](https://img.shields.io/badge/Built%20with-POML-blueviolet)
 
 A **Streamlit-based documentation tool** that restructures README-like content into a **clean, standardized Markdown format** using **POML (Prompt Orchestration Markup Language) as the single source of truth**.
