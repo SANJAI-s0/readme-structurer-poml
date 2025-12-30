@@ -1,0 +1,26 @@
+{
+  "Title": "POML README Structurer",
+  "Description": "This project restructures README content using POML rules.",
+  "Architecture": {
+    "UI": "Streamlit interface",
+    "Core": "POML engine and formatter"
+  },
+  "Features": [
+    "Multiple input formats",
+    "POML-based logic",
+    "Markdown output"
+  ],
+  "Requirements": {
+    "Python": "3.10",
+    "Framework": "Streamlit"
+  },
+  "Installation": [
+    "Create virtual environment",
+    "Install dependencies"
+  ],
+  "Usage": [
+    "Upload file",
+    "Click Structure README"
+  ],
+  "License": "MIT"
+}

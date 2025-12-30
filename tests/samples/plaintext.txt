@@ -1,0 +1,28 @@
+Title
+POML README Structurer
+
+Description
+This project restructures README content using POML rules.
+
+Architecture
+The system consists of a Streamlit UI, a POML engine, and a formatter.
+
+Features
+Accepts multiple input formats.
+Uses POML as the single source of truth.
+Produces structured Markdown output.
+
+Requirements
+Python 3.10
+Streamlit
+
+Installation
+Create a virtual environment.
+Install dependencies.
+
+Usage
+Upload a file or paste text.
+Click Structure README.
+
+License
+MIT

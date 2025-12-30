@@ -1,0 +1,23 @@
+<project>
+  <Title>POML README Structurer</Title>
+  <Description>
+    This project restructures README content using POML rules.
+  </Description>
+
+  <Architecture>
+    <Component>Streamlit UI</Component>
+    <Component>POML Engine</Component>
+  </Architecture>
+
+  <Features>
+    <Feature>Multiple formats</Feature>
+    <Feature>Markdown output</Feature>
+  </Features>
+
+  <Installation>
+    <Step>Create virtual environment</Step>
+    <Step>Install dependencies</Step>
+  </Installation>
+
+  <License>MIT</License>
+</project>

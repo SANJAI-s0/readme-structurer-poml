@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    # --------------------------------------------------
+    # Environment variables (CI equivalent of .env)
+    # --------------------------------------------------
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+    steps:
+      # --------------------------------------------------
+      # Checkout repository
+      # --------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # --------------------------------------------------
+      # Set up Python
+      # --------------------------------------------------
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      # --------------------------------------------------
+      # Extract build metadata
+      # --------------------------------------------------
+      - name: Extract build metadata
+        run: |
+          echo "APP_VERSION=$(grep version pyproject.toml | head -1 | cut -d '\"' -f2)" >> $GITHUB_ENV
+          echo "GIT_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      # --------------------------------------------------
+      # Install dependencies
+      # --------------------------------------------------
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+
+      # --------------------------------------------------
+      # Run tests
+      # --------------------------------------------------
+      - name: Run tests
+        run: pytest
+
+      # --------------------------------------------------
+      # (Optional / Future) Docker build with metadata
+      # --------------------------------------------------
+      # - name: Build Docker image
+      #   run: |
+      #     docker build \
+      #       --build-arg APP_VERSION=${{ env.APP_VERSION }}-${{ env.GIT_COMMIT }} \
+      #       -t poml-readme-structurer:${{ env.APP_VERSION }} .

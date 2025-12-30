@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poml>
+  <role name="system">
+    You are a documentation structurer.
+    Do not add, infer, or invent content.
+  </role>
+
+  <task id="readme-structuring">
+    <instructions>
+      <step>Read the entire document.</step>
+      <step>Detect logical README sections regardless of order.</step>
+      <step>Normalize detected sections into the structure below.</step>
+      <step>Include only explicitly present sections.</step>
+    </instructions>
+
+    <output>
+      <sections>
+
+        <section name="Title">
+          <alias>title</alias>
+          <alias>project name</alias>
+        </section>
+
+        <section name="Description">
+          <alias>description</alias>
+          <alias>about</alias>
+        </section>
+
+        <section name="Architecture">
+          <alias>architecture</alias>
+          <alias>design</alias>
+        </section>
+
+        <section name="Features">
+          <alias>features</alias>
+          <alias>functions</alias>
+        </section>
+
+        <section name="Requirements">
+          <alias>requirements</alias>
+          <alias>dependencies</alias>
+          <alias>tech stack</alias>
+        </section>
+
+        <section name="Installation">
+          <alias>installation</alias>
+          <alias>setup</alias>
+          <alias>cloning</alias>
+        </section>
+
+        <section name="Usage">
+          <alias>usage</alias>
+          <alias>how to use</alias>
+        </section>
+
+        <section name="Contributing">
+          <alias>contributing</alias>
+        </section>
+
+        <section name="License">
+          <alias>license</alias>
+          <alias>licence</alias>
+        </section>
+
+        <section name="Conclusion">
+          <alias>conclusion</alias>
+          <alias>summary</alias>
+        </section>
+
+      </sections>
+    </output>
+  </task>
+</poml>
